@@ -38,6 +38,6 @@ echo $APK_PROJECT
 cd $GATOR_PATH
 SootAndroid/scripts/guiAnalysis.sh $GATOR_PATH/AndroidBench $adk_path $APK_PROJECT $ANDROID_VER $APK_FILE
 cd .
-mv $HOME/gui_transition.xml  $APK_FILE"_gator.xml"  
+mv $HOME/gui_transition.xml  $APK_FILE"_arrow.xml"  
       
 # SootAndroidOptions="-client GUIHierarchyPrinterClient"
