@@ -1,7 +1,7 @@
 ANDROID_VER="android-19"
-REDEXER_PATH=$HOME/Dropbox/PhD/phd_data/tools/redexer2/redexer
-GATOR_PATH=$HOME/Dropbox/PhD/phd_data/tools/gator/gator-1.2
-adk_path=$HOME/Dropbox/PhD/phd_data/tools/android_sdk/android-sdk-macosx
+REDEXER_PATH=$REDEXER_HOME
+GATOR_PATH=$GATOR_HOME
+adk_path=$ANDROID_SDK
 
 
 
@@ -37,6 +37,7 @@ APK_PROJECT=$GATOR_PATH/apk-preprocess-tool/output/$APK_FILE"forEclipseProject"
 echo $APK_PROJECT
 cd $GATOR_PATH
 SootAndroid/scripts/guiAnalysis.sh $GATOR_PATH/AndroidBench $adk_path $APK_PROJECT $ANDROID_VER $APK_FILE
-mv $HOME/gui_transition.xml  $HOME/Dropbox/PhD/RollbackNRestart/code/$APK_FILE"_gator.xml"  
+cd .
+mv $HOME/gui_transition.xml  $APK_FILE"_gator.xml"  
       
 # SootAndroidOptions="-client GUIHierarchyPrinterClient"
