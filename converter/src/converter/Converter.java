@@ -10,6 +10,7 @@ import org.apache.commons.io.FileUtils;
 
 public class Converter {
 
+	public static String ARROW_PATH=System.getenv("ARROW_PATH").toString();
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -39,9 +40,9 @@ public class Converter {
 				int versionNo=Integer.parseInt(matcher.group(1), 16);
 				if(versionNo==4)versionNo=8;
 				
-				List <String> lines2=FileUtils.readLines(new File("/Users/tanzirulazim/Dropbox/PhD/RollbackNRestart/code/test/drive.sh"));
+				List <String> lines2=FileUtils.readLines(new File(ARROW_PATH+"/drive.sh"));
 				lines2.set(0, "ANDROID_VER=\"android-"+versionNo+"\"");
-				FileUtils.writeLines(new File("/Users/tanzirulazim/Dropbox/PhD/RollbackNRestart/code/test/drive.sh"), lines2);
+				FileUtils.writeLines(new File(ARROW_PATH+"/drive.sh"), lines2);
 				System.out.println("minimum sdk written: "+ versionNo);
 
 			}
